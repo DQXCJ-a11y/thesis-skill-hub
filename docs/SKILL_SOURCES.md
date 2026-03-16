@@ -1,77 +1,40 @@
-# 📚 已收录 Skill 来源清单
+# 已收录来源
 
-本文件记录所有已被收录并整合进 `SKILL.md` 的 skill 来源。
-
----
-
-## 收录标准
-
-一个 skill 要被收录，需满足以下条件中的至少两项：
-
-1. 有明确的论文写作/审查指令（不是通用聊天提示词）
-2. 有结构化的检查维度或规则清单
-3. 经过实际论文审查验证有效
-4. 有一定的 GitHub 星标或社区认可
+本项目的 SKILL 内容综合参考了以下开源项目的实践经验和设计思路。
 
 ---
 
-## 已收录来源
+## 直接参考来源
 
-### 1. xstongxue/best-skills (paper-write)
-
-| 项目 | 信息 |
-|------|------|
-| 仓库地址 | https://github.com/xstongxue/best-skills |
-| 核心文件 | `skills/paper-write/SKILL.md` |
-| 收录日期 | 2025-03-10 |
-| 收录版本 | v1.0.0 |
-
-**贡献内容：**
-- 论文大纲审核（理工科/文科自动区分）
-- 章节结构仿写（实验章节、绪论、摘要等）
-- 润色/去AI味（通用润色 + 防AIGC检测）
-- 参考文献查找与 BibTeX 生成
-- 扩写/缩写/中英互译
-- 从论文中提取结构化信息（用于答辩PPT）
+| 来源 | 贡献内容 | 吸收到哪个 SKILL | 链接 |
+|------|---------|-----------------|------|
+| xstongxue/best-skills | 论文大纲审核、章节仿写、润色去AI味 | 03-大纲生成、04-章节写作、08-AI痕迹消除 | [GitHub](https://github.com/xstongxue/best-skills) |
+| wanddream/skill-thesis-writer | 中文学位论文全流程审查、AI痕迹消除 | 05-全文审查、08-AI痕迹消除 | [GitHub](https://github.com/wanddream/skill-thesis-writer) |
+| huangkiki/dailypaper-skills | 文献筛选与阅读辅助 | 02-文献分析 | [GitHub](https://github.com/huangkiki/dailypaper-skills) |
+| junkzhu/Chinese-Dissertation-Writing-Skill | 风格迁移、错题本机制、一致性检查 | 00-风格学习、06-一致性检查 | [GitHub](https://github.com/junkzhu/Chinese-Dissertation-Writing-Skill) |
+| Stars-OC/thesis-creator | 全流程工作流设计、AIGC检测、降重优化 | 07-降重改写、整体流程设计 | [GitHub](https://github.com/Stars-OC/thesis-creator) |
+| LeonChaoX/qinyan-academic-skills | 学术Skill分类体系、文献检索Skill | 项目结构参考 | [GitHub](https://github.com/LeonChaoX/qinyan-academic-skills) |
+| RETHINKAIZ/thinking-order-skills | 改写降重、文风润色、选题策划 | 07-降重改写、01-选题调研 | [GitHub](https://github.com/RETHINKAIZ/thinking-order-skills) |
 
 ---
 
-### 2. wanddream/skill-thesis-writer
+## 设计理念来源
 
-| 项目 | 信息 |
-|------|------|
-| 仓库地址 | https://github.com/wanddream/skill-thesis-writer |
-| 核心文件 | `SKILL.md`（根目录） |
-| 收录日期 | 2025-03-10 |
-| 收录版本 | v1.0.0 |
-
-**贡献内容：**
-- 多学科支持（工科、心理学、教育学、管理学）
-- AI 痕迹消除（8种特征识别与改写逻辑）
-- 参考文献格式化（GB/T 7714-2015）
-- 论文质量逐章检查（逻辑完整性、前后呼应、创新点表述）
+- **风格DNA提取**：思路源自 junkzhu 的 style_extractor，适配为网页版单次对话的即时提取方案
+- **错题本机制**：思路源自 junkzhu 的 error_log，在网页版中转化为 SKILL 内预置的常见错误规则库
+- **双层降重策略**：受 Stars-OC 的 synonym_replace.py + LLM 改写启发，在纯 prompt 形态中转化为5级改写策略体系
+- **8种AI痕迹特征**：综合了 wanddream、xstongxue 的去AI味规则和实际 AIGC 检测工具的判定标准
 
 ---
 
-### 3. huangkiki/dailypaper-skills
+## 贡献新来源
 
-| 项目 | 信息 |
-|------|------|
-| 仓库地址 | https://github.com/huangkiki/dailypaper-skills |
-| 核心文件 | `skills/` 文件夹下多个 SKILL.md |
-| 收录日期 | 2025-03-10 |
-| 收录版本 | v1.0.0 |
+如果你发现了其他优秀的论文写作相关 Skill/Prompt 项目，欢迎通过以下方式提交：
 
-**贡献内容：**
-- 论文筛选与阅读辅助
-- 文献关键信息提取
-- 阅读笔记生成（适配 Obsidian）
-- 辅助验证综述部分引用准确性
+1. 提 Issue，附上项目链接和你认为值得参考的内容
+2. 提 PR，直接更新本文件并说明吸收了什么内容
 
----
-
-## 待评估来源
-
-以下仓库已发现但尚未评估是否收录：
-
-（暂无，欢迎通过 [Issue](../../issues/new?template=recommend-skill.md) 推荐）
+收录标准：
+- 必须是开源项目
+- 内容与中文学位论文写作相关
+- 有可借鉴的规则、策略或设计思路
