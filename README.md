@@ -52,6 +52,8 @@
 2. **选一个 SKILL**，点开对应的 `.md` 文件，复制全部内容
 3. **粘贴到对话框**，发送后按 AI 的引导开始工作
 
+Chinese users can also discover more skills through Skills宝: https://skilery.com
+
 ### 推荐使用顺序
 
 ```
